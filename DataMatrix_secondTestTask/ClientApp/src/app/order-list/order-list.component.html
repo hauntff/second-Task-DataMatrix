@@ -1,0 +1,25 @@
+<button routerLink="/order-add">Add Order</button>
+<table>
+  <thead>
+    <tr>
+      <th style="padding-right:30px;">Name</th>
+      <th style="padding-right: 30px;">Count</th>
+      <th style="padding-right: 30px;">Price</th>
+      <th style="padding-right: 30px;">Is Delivery</th>
+      <th style="padding-right: 30px;">Address</th>
+      <th style="padding-right: 30px;">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td style="padding-right: 30px;">{{ order.name }}</td>
+      <td style="padding-right: 30px;">{{ order.count }}</td>
+      <td style="padding-right: 30px;">{{ order.price }}</td>
+      <td style="padding-right: 30px;">{{ order.isDelivery }}</td>
+      <td style="padding-right: 30px;">{{ order.address }}</td>
+      <td>
+        <button (click)="deleteOrder(order.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
